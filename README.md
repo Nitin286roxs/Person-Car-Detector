@@ -34,4 +34,4 @@ Performance:
 Model's precesion is fluctuating in range of  70-75, not able to converge after 75%.
 Find the precesion and recall graph wrt to epoch below:
 
-![alt text](https://raw.githubusercontent.com/Nitin286roxs/Person-Car-Detector/blob/main/precision_recall_vs_epochs.png)
+![alt text](https://raw.githubusercontent.com/Nitin286roxs/Person-Car-Detector/main/precision_recall_vs_epochs.png)
