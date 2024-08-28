@@ -19,7 +19,7 @@ with open('results.txt', 'r') as file:
             recalls.append(recall)
 
 # Plot precision and recall
-plt.figure(figsize=(25, 5))
+plt.figure(figsize=(25, 25))
 plt.plot(epochs, precisions, label='Precision', marker='o')
 plt.plot(epochs, recalls, label='Recall', marker='o')
 
