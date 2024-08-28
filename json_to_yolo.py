@@ -2,7 +2,7 @@ import json
 import cv2
 import os
 
-json_file = open("annotations/bbox-annotations.json", "r")
+json_file = open("trainval//annotations/bbox-annotations.json", "r")
 json_data = json.load(json_file)
 images = json_data['images']
 annotation = json_data['annotations']
@@ -20,15 +20,15 @@ for ith_annotation in annotation:
     print(image_name, bbox)
     if not prev_image_id:
         prev_image_id = image_id
-        cv_img = cv2.imread(f"images/{image_name}")
-        file_object = open(f"labels/{os.path.splitext(image_name)[0]}.txt", "a")
+        cv_img = cv2.imread(f"trainval/images/{image_name}")
+        file_object = open(f"trainval/labels/{os.path.splitext(image_name)[0]}.txt", "a")
     if prev_image_id != image_id:
         file_object.close()
         #file_to_saved = images[prev_image_id]['file_name']
         #print(f"file_to_saved: {file_to_saved}")
         #cv2.imwrite(f"plot_test/{file_to_saved}", cv_img)
         cv_img = cv2.imread(f"images/{image_name}")
-        file_object = open(f"labels/{os.path.splitext(image_name)[0]}.txt", "a")
+        file_object = open(f"trainval/labels/{os.path.splitext(image_name)[0]}.txt", "a")
 
         prev_image_id = image_id
     print(cv_img.shape)
