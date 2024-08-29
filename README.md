@@ -30,8 +30,15 @@ cd yolov7/
 python train.py --workers 8 --device 0 --batch-size 4 --data data/custom.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --weights '' --name yolov7 --hyp data/hyp.scratch.p5.yaml
 ```
 
-Performance:
+## Performance:
 Model's precesion is fluctuating in range of  70-75, not able to converge after 75%.
 Find the precesion and recall graph wrt to epoch below:
+
+```
+Class      Images      Labels         P           R      mAP@.5       mAP@.5:.95
+all         448        3232       0.761       0.613       0.672       0.359
+person      448        2060        0.71       0.568        0.62       0.277
+car         448        1172       0.812       0.658       0.723        0.44
+```
 
 ![alt text](https://raw.githubusercontent.com/Nitin286roxs/Person-Car-Detector/main/precision_recall_vs_epochs.png)
