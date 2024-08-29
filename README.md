@@ -33,7 +33,7 @@ python train.py --workers 8 --device 0 --batch-size 4 --data data/custom.yaml --
 After 300 epoch training we got some best checkpoint which we will test on some video
 ```
 cd yolov7
-python detect.py --weights runs/train/yolov74/weights/best.pt --conf 0.25 --img-size 640 --source ../sample_720p.mp4
+python detect.py --weights ../best.pt --conf 0.25 --img-size 640 --source ../sample_720p.mp4
 ```
 
 ## Result of model testing
