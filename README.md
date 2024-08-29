@@ -29,6 +29,15 @@ cp custom.yaml yolov7/data/
 cd yolov7/
 python train.py --workers 8 --device 0 --batch-size 4 --data data/custom.yaml --img 640 640 --cfg cfg/training/yolov7.yaml --weights '' --name yolov7 --hyp data/hyp.scratch.p5.yaml
 ```
+## Testing model
+After 300 epoch training we got some best checkpoint which we will test on some video
+```
+cd yolov7
+python detect.py --weights runs/train/yolov74/weights/best.pt --conf 0.25 --img-size 640 --source ./sample_720p.mp4
+```
+
+## Result of model testing
+![avatar](detect_test.gif)
 
 ## Performance:
 Model's precesion is fluctuating in range of  70-75, not able to converge after 75%.
